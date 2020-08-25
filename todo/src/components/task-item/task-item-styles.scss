@@ -1,0 +1,28 @@
+.task-list__item {
+  display: flex;
+  padding: 5px;
+
+  &-text {
+    width: 85%;
+    height: 40px;
+    margin: 0 10px 0 0;
+    padding: 5px 10px;
+    font-size: 20px;
+    line-height: 2;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    user-select: none;
+  }
+
+  &-button {
+    width: 55px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-icon {
+    font-size: 20px;
+  }
+}
