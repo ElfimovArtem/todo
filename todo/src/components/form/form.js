@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import { addTodo } from '../../redux/action-creators';
 import './form-styles.scss';
+import { connect } from 'react-redux';
+import { store } from '../../redux';
 
-export const Form = () => {
+const Form = ({ dispatch }) => {
   const inputBtnHandler = () => {
     if (title.trim()) {
-      console.log(title);
+      dispatch(addTodo(title));
+      console.log(store.getState());
     }
     setTitle('');
   };
@@ -30,3 +34,5 @@ export const Form = () => {
     </form>
   );
 };
+
+export default connect()(Form);
