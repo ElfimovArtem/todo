@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO } from '../constants';
+import { ADD_TODO, COMPLETE_TODO, DELETE_TODO } from '../constants';
 
 const initialState = {
   todos: []
@@ -26,6 +26,19 @@ export const todoReducer = (state = initialState, action) => {
             return {
               ...todo,
               completed: !todo.completed
+            }
+          }
+          return todo
+        })
+      };
+      case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.map((todo, index) => {
+          if (index === action.index) {
+            return {
+              ...todo,
+              deleted: todo.id
             }
           }
           return todo
