@@ -7,3 +7,7 @@ export const addTodo = (text) => {
 export const competeTodo = (index) => {
   return { type: COMPLETE_TODO, index }
 };
+
+export const deleteTodo = (index) => {
+  return { type: COMPLETE_TODO, index }
+};
